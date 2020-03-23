@@ -1,7 +1,7 @@
 "
 " java specific setting files
 " ----------------------------
-nnoremap <leader>8 :e ~/.vim/after/ftplugin/java/java.vim<cr>
+nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/java/java.vim<cr>
 
 "
 " build 
