@@ -122,7 +122,7 @@ nnoremap <leader><leader> :Vexplore<cr>
 "
 " ultisnips
 " ----------------------------
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 
 "
