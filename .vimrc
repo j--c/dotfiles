@@ -105,7 +105,7 @@ let g:deoplete#enable_at_startup = 1
 "
 " init.vim
 " ----------------------------
-nnoremap <leader>9 :e ~/.vimrc<cr>
+nnoremap <leader>9 :e ~/Documents/git-repos/dotfiles/.vimrc<cr>
 
 "
 " netrw - project drawer
@@ -122,7 +122,7 @@ nnoremap <leader><leader> :Vexplore<cr>
 "
 " ultisnips
 " ----------------------------
-let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/snippets"
+let g:UltiSnipsSnippetsDir="~/Documents/git-repos/dotfiles/.vim/plugged/vim-snippets/snippets"
 let g:UltiSnipsExpandTrigger="<tab>"
 
 "
@@ -133,7 +133,7 @@ let g:airline_theme="murmur"
 "
 " package manager
 " ----------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
