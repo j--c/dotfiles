@@ -6,8 +6,7 @@ nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/java/ja
 "
 " build 
 " ----------------------------
-set makeprg=gradle\ build\ --info
-nnoremap <leader>5 :make<cr> 
+tnoremap <leader>5 gradle\ build<cr> 
 
 
 " fold 
