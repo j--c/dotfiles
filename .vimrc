@@ -112,6 +112,15 @@ let g:deoplete#enable_at_startup = 1
 nnoremap <leader>9 :e ~/Documents/git-repos/dotfiles/.vimrc<cr>
 
 "
+" underline
+" ----------------------------
+function! Underline()
+    normal! yypv$r-
+endfunction
+command! Underline call Underline()
+nnoremap <leader>- :Underline<cr>
+
+"
 " netrw - project drawer
 " ----------------------------
 let g:netrw_liststyle=0
