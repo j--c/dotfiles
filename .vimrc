@@ -123,14 +123,12 @@ nnoremap <leader>- :Underline<cr>
 "
 " netrw - project drawer
 " ----------------------------
-let g:netrw_liststyle=3
-let g:netrw_banner=0
-let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_liststyle=0
+let g:netrw_banner=1
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 10
 autocmd FileType netrw setl bufhidden=delete
-nnoremap <leader><leader> :Vexplore<cr>
+nnoremap <leader><leader> :10Lexplore<cr>
 
 "
 " ultisnips
@@ -142,7 +140,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " vim-airline
 " ----------------------------
 let g:airline_theme="murmur"
-
+let java_highlight_functions=1
 "
 " package manager
 " ----------------------------
