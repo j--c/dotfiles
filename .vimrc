@@ -79,7 +79,6 @@ nnoremap <leader>v :vsp<cr>
 "
 " terminal
 " ----------------------------
-command! -nargs=* T split | terminal <args>
 nnoremap <leader>1 :term<cr>
 
 "
