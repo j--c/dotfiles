@@ -72,12 +72,8 @@ nnoremap <leader>g :b!
 " ----------------------------
 nnoremap <leader>w <c-w>w
 nnoremap <leader>c <c-w>c
-nnoremap <leader>= <c-w>+
-nnoremap <leader>- <c-w>-
 tnoremap <leader>w <c-w>w
 tnoremap <leader>c <c-w>c
-tnoremap <leader>= <c-w>+
-tnoremap <leader>- <c-w>-
 nnoremap <leader>v :vsp<cr>
 
 "
