@@ -142,7 +142,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " vim-airline
 " ----------------------------
 let g:airline_theme="murmur"
-let java_highlight_functions=1
 "
 " package manager
 " ----------------------------
