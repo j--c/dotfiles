@@ -13,6 +13,8 @@ let mapleader=","
 set nocompatible
 set mouse=a
 
+
+
 "
 " syntax
 " ----------------------------
