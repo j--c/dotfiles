@@ -1,4 +1,11 @@
+"
+" java specific setting files
+" ----------------------------
+nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
+
+
 " folding for markdown
+" ----------------------------
 
 " Thank you Drew Neil!
 " The following functions were created by watching Episode #38 of Vimcasts 
