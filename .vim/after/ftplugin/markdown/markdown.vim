@@ -3,6 +3,9 @@
 " ----------------------------
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
 
+set tabstop=3
+set shiftwidth=3
+set softtabstop=3
 
 " folding for markdown
 " ----------------------------
