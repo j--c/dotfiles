@@ -14,7 +14,7 @@ tnoremap <leader>5 gradle build<cr>
 setlocal foldcolumn=3
 set foldmethod=marker 
 set foldmarker={,}
-set foldlevel=1
+set foldlevel=3
 
 "
 " tags
