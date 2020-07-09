@@ -6,7 +6,7 @@ nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/java/ja
 "
 " build 
 " ----------------------------
-tnoremap <leader>5 gradle build<cr> 
+tnoremap <leader>5 mvn test<cr> 
 
 
 " fold 
