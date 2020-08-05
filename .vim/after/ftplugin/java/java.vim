@@ -3,6 +3,7 @@
 " ----------------------------
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/java/java.vim<cr>
 
+
 "
 " build 
 " ----------------------------
@@ -15,6 +16,7 @@ setlocal foldcolumn=3
 set foldmethod=marker 
 set foldmarker={,}
 set foldlevel=3
+
 
 "
 " tags

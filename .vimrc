@@ -86,7 +86,7 @@ nnoremap <leader>1 :term<cr>
 " ----------------------------
 set incsearch
 set path=,,**
-nnoremap <leader>f :find 
+let g:ctrlp_map = '<leader>f'
 
 "
 " folding
@@ -134,6 +134,12 @@ let g:UltiSnipsSnippetsDir="~/Documents/git-repos/dotfiles/.vim/plugged/vim-snip
 let g:UltiSnipsExpandTrigger="<tab>"
 
 "
+" for ctrlp mainly
+" ----------------------------
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*
+
+
+"
 " vim-airline
 " ----------------------------
 let g:airline_theme="murmur"
@@ -149,6 +155,7 @@ Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 
