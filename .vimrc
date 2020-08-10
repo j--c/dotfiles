@@ -79,7 +79,21 @@ nnoremap <leader>v :vsp<cr>
 "
 " terminal
 " ----------------------------
-nnoremap <leader>1 :term<cr>
+"nnoremap <leader>1 :term<cr>
+
+
+"
+" terminal
+" ----------------------------
+function! SplitTerm()
+    sp
+    term
+endfunction
+command! SplitTerm call SplitTerm()
+nnoremap <leader>1 :SplitTerm<cr>
+tnoremap <esc> <c-\><c-n>
+
+
 
 "
 " searching and finding
@@ -136,7 +150,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 "
 " for ctrlp mainly
 " ----------------------------
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/target/*
+set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.zip,*.pyc,__init__*.py
 
 
 "
