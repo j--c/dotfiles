@@ -113,11 +113,6 @@ nnoremap <space> za
 nnoremap <leader>n :e 
 
 "
-" deoplete
-" ----------------------------
-let g:deoplete#enable_at_startup = 1
-
-"
 " init.vim
 " ----------------------------
 nnoremap <leader>9 :e ~/Documents/git-repos/dotfiles/.vimrc<cr>
@@ -162,7 +157,6 @@ let g:airline_theme="murmur"
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
