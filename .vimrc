@@ -76,6 +76,16 @@ tnoremap <leader>w <c-w>w
 tnoremap <leader>c <c-w>c
 nnoremap <leader>v :vsp<cr>
 
+
+" quickfix
+" ----------------------------
+function! VG(...)
+   execute 'vimgrep /' . a:2 . '/g ' . a:1
+endfunction
+command! -nargs=* VG call VG(<f-args>)
+nnoremap <leader>x :VG notes/*.md
+nnoremap <leader>l :cnext<cr>
+
 "
 " terminal
 " ----------------------------
@@ -132,6 +142,17 @@ command! Underline call Underline()
 nnoremap <leader>- :Underline<cr>
 
 "
+" New Note
+" ----------------------------
+function! NewNote()
+
+    execute 'e ' . fnameescape('notes/'.strftime('%y%m%d%H%M%S') . '.md')
+endfunction
+command! NewNote call NewNote()
+nnoremap <leader>+ :NewNote<cr>
+
+
+"
 " netrw - project drawer
 " ----------------------------
 let g:netrw_liststyle=3
@@ -170,6 +191,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
