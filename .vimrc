@@ -139,7 +139,8 @@ set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.zip,*.pyc,__init__*.py
 "
 " vim-airline
 " ----------------------------
-let g:airline_theme="murmur"
+let g:airline_theme="kalisi"
+
 "
 " package manager
 " ----------------------------
@@ -159,4 +160,4 @@ call plug#end()
 " colors
 " ----------------------------
 set background=dark
-colorscheme iceberg
+colorscheme onedark
