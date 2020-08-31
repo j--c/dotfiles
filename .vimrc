@@ -13,34 +13,31 @@ let mapleader=","
 set nocompatible
 set mouse=a
 
-
-
 "
 " syntax
 " ----------------------------
-syntax enable
 filetype indent on
+syntax enable
 
 "
 " ui config
 " ----------------------------
-set colorcolumn=100
 highlight ColorColumn ctermbg=7
-set linebreak
+set colorcolumn=100
 set relativenumber
-set showcmd
-set cursorline
-set wildmenu
 set lazyredraw
+set cursorline
 set showmatch
+set linebreak
 set wildmenu
+set showcmd
 
 "
 " spaces and tabs
 " ----------------------------
-set tabstop=4
-set shiftwidth=4
 set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 "
@@ -52,12 +49,12 @@ nnoremap <leader>0 :set list!<cr>
 "
 " movement
 " ----------------------------
+nnoremap <Right> <nop>
+nnoremap <Left> <nop>
+nnoremap <Down> <nop>
+nnoremap <Up> <nop>
 nnoremap j gj
 nnoremap k gk
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
 
 "
 " buffers
@@ -70,18 +67,11 @@ nnoremap <leader>g :b!
 "
 " windows
 " ----------------------------
+nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w <c-w>w
 nnoremap <leader>c <c-w>c
 tnoremap <leader>w <c-w>w
 tnoremap <leader>c <c-w>c
-nnoremap <leader>v :vsp<cr>
-
-
-"
-" terminal
-" ----------------------------
-"nnoremap <leader>1 :term<cr>
-
 
 "
 " terminal
@@ -94,14 +84,12 @@ command! SplitTerm call SplitTerm()
 nnoremap <leader>1 :SplitTerm<cr>
 tnoremap <esc> <c-\><c-n>
 
-
-
 "
 " searching and finding
 " ----------------------------
+let g:ctrlp_map = '<leader>f'
 set incsearch
 set path=,,**
-let g:ctrlp_map = '<leader>f'
 
 "
 " folding
@@ -128,25 +116,14 @@ command! Underline call Underline()
 nnoremap <leader>- :Underline<cr>
 
 "
-" New Note
-" ----------------------------
-function! NewNote()
-
-    execute 'e ' . fnameescape('notes/'.strftime('%y%m%d%H%M%S') . '.md')
-endfunction
-command! NewNote call NewNote()
-nnoremap <leader>+ :NewNote<cr>
-
-
-"
 " netrw - project drawer
 " ----------------------------
-let g:netrw_liststyle=3
-let g:netrw_banner=0
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
 autocmd FileType netrw setl bufhidden=delete
 nnoremap <leader><leader> :10Lexplore<cr>
+let g:netrw_browse_split = 4
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_altv = 1
 
 "
 " ultisnips
@@ -159,7 +136,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " ----------------------------
 set wildignore+=*/tmp/*,*/target/*,*.so,*.swp,*.zip,*.pyc,__init__*.py
 
-
 "
 " vim-airline
 " ----------------------------
@@ -168,17 +144,16 @@ let g:airline_theme="murmur"
 " package manager
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
-Plug 'majutsushi/tagbar'
-Plug 'w0rp/ale'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'majutsushi/tagbar'
+Plug 'kien/ctrlp.vim'
+Plug 'w0rp/ale'
 call plug#end()
-
 
 "
 " colors
