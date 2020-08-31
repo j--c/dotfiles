@@ -77,15 +77,6 @@ tnoremap <leader>c <c-w>c
 nnoremap <leader>v :vsp<cr>
 
 
-" quickfix
-" ----------------------------
-function! VG(...)
-   execute 'vimgrep /' . a:2 . '/g ' . a:1
-endfunction
-command! -nargs=* VG call VG(<f-args>)
-nnoremap <leader>x :VG notes/*.md
-nnoremap <leader>l :cnext<cr>
-
 "
 " terminal
 " ----------------------------
