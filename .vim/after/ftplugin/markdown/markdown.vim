@@ -3,11 +3,39 @@
 " ----------------------------
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
 
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
+"
+" gtd context
+" ----------------------------
+function! Context()
+    let l:contexts = "&Waiting\n&Home\n&Internet\n&Outreach\n&Cathy\n&Daniel"
+    let l:context = ""
+    let choice = confirm("pick a context", l:contexts, 0, "Question")
+    if choice == 1
+        let l:context = "wait"
+    elseif choice == 2
+        let l:context = "home"
+    elseif choice == 3
+        let l:context = "internet"
+    elseif choice == 4
+        let l:context = "outreach"
+    elseif choice == 5
+        let l:context = "ccc"
+    elseif choice == 6
+        let l:context = "dfm"
+    endif
+    silent execute "normal A @".l:context
+endfunction
 
-" folding for markdown
+command! -nargs=0 Context call Context()
+nnoremap <leader>2 :Context<cr>
+
+"
+" current date
+" ----------------------------
+nnoremap <leader>3 "=strftime("%d-%b-%Y")<cr>P
+
+"
+" custom fold expression
 " ----------------------------
 
 " Thank you Drew Neil!
@@ -26,11 +54,21 @@ endfunction
 
 function! GetMarkdownFoldText()
     let foldsize = (v:foldend-v:foldstart)
-    return getline(v:foldstart).' ('.foldsize.' lines)'
+    return getline(v:foldstart)
 endfunction
 
-setlocal foldlevel=1
-setlocal foldcolumn=3
-setlocal foldmethod=expr
-setlocal foldexpr=FoldMarkdown()
+"
+" folding 
+" ----------------------------
 setlocal foldtext=GetMarkdownFoldText()
+setlocal foldexpr=FoldMarkdown()
+setlocal foldmethod=expr
+setlocal foldcolumn=3
+setlocal foldlevel=1
+
+"
+" tabs 
+" ----------------------------
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
