@@ -30,6 +30,17 @@ command! -nargs=0 Context call Context()
 nnoremap <leader>2 :Context<cr>
 
 "
+" gtd complete task
+" ----------------------------
+function! CompletTask()
+    silent execute ":.s/\ ]/x]"
+    silent execute ":noh"
+endfunction
+
+command! -nargs=0 CompletTask call CompletTask()
+nnoremap <leader>5 :CompletTask<cr>
+
+"
 " current date
 " ----------------------------
 nnoremap <leader>3 "=strftime("%d-%b-%Y")<cr>P
@@ -42,10 +53,10 @@ nnoremap <leader>3 "=strftime("%d-%b-%Y")<cr>P
 " The following functions were created by watching Episode #38 of Vimcasts 
 " (http://vimcasts.org/episodes/writing-a-custom-fold-expression/)
 function! FoldMarkdown()
-    let currentline = getline(v:lnum)
-    if match(currentline, '^##') >= 0
+    let l:currentline = getline(v:lnum)
+    if match(l:currentline, '^##') >= 0
         return ">2"
-    elseif match(currentline, '^#') >= 0
+    elseif match(l:currentline, '^#') >= 0
         return ">1"
     else
         return "="
@@ -69,6 +80,6 @@ setlocal foldlevel=1
 "
 " tabs 
 " ----------------------------
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
+set softtabstop=3
+set shiftwidth=3
+set tabstop=3
