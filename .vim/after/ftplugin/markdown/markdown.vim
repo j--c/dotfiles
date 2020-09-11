@@ -4,6 +4,16 @@
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
 
 "
+" count gtd projects
+" ----------------------------
+function! CountProjects()
+    execute ":%s/###//gn"
+    silent execute ":noh"
+endfunction
+
+command! -nargs=0 CountProjects call CountProjects()
+nnoremap <leader>; :CountProjects<cr>
+"
 " gtd context
 " ----------------------------
 function! Context()
