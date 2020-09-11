@@ -7,7 +7,7 @@ nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdow
 " gtd context
 " ----------------------------
 function! Context()
-    let l:contexts = "&Waiting\n&Home\n&Internet\n&Outreach\n&Cathy\n&Daniel"
+    let l:contexts = "&Waiting\n&Home\n&Internet\n&Outreach\n&Errand\n&Cathy\n&Daniel"
     let l:context = ""
     let choice = confirm("pick a context", l:contexts, 0, "Question")
     if choice == 1
@@ -19,8 +19,10 @@ function! Context()
     elseif choice == 4
         let l:context = "outreach"
     elseif choice == 5
-        let l:context = "ccc"
+        let l:context = "errand"
     elseif choice == 6
+        let l:context = "ccc"
+    elseif choice == 7
         let l:context = "dfm"
     endif
     silent execute "normal A @".l:context
@@ -32,18 +34,24 @@ nnoremap <leader>2 :Context<cr>
 "
 " gtd complete task
 " ----------------------------
-function! CompletTask()
+function! CompleteTask()
     silent execute ":.s/\ ]/x]"
     silent execute ":noh"
 endfunction
 
-command! -nargs=0 CompletTask call CompletTask()
-nnoremap <leader>5 :CompletTask<cr>
+command! -nargs=0 CompleteTask call CompleteTask()
+nnoremap <leader>5 :CompleteTask<cr>
 
 "
 " current date
 " ----------------------------
-nnoremap <leader>3 "=strftime("%d-%b-%Y")<cr>P
+function! CurrentDate()
+  let l:datetime = strftime("%d-%b-%Y")
+
+    silent execute "normal A ".l:datetime
+endfunction
+command! -nargs=0 CurrentDate call CurrentDate()
+nnoremap <leader>3 :CurrentDate<cr>
 
 "
 " custom fold expression
