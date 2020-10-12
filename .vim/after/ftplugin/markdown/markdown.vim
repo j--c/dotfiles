@@ -4,35 +4,23 @@
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
 
 "
-" count gtd projects
-" ----------------------------
-function! CountProjects()
-    execute ":%s/###//gn"
-    silent execute ":noh"
-endfunction
-
-command! -nargs=0 CountProjects call CountProjects()
-nnoremap <leader>; :CountProjects<cr>
-"
 " gtd context
 " ----------------------------
 function! Context()
-    let l:contexts = "&Waiting\n&Home\n&Internet\n&Outreach\n&Errand\n&Cathy\n&Daniel"
+    let l:contexts = "&1 home\n&2 internet\n&3 contact\n&4 errand\n&5 ccc\n&6 dfm"
     let l:context = ""
-    let choice = confirm("pick a context", l:contexts, 0, "Question")
+    let choice = confirm("Pick a Context:", l:contexts, 0, "Question")
     if choice == 1
-        let l:context = "wait"
-    elseif choice == 2
         let l:context = "home"
-    elseif choice == 3
+    elseif choice == 2
         let l:context = "internet"
+    elseif choice == 3
+        let l:context = "contact"
     elseif choice == 4
-        let l:context = "outreach"
-    elseif choice == 5
         let l:context = "errand"
-    elseif choice == 6
+    elseif choice == 5
         let l:context = "ccc"
-    elseif choice == 7
+    elseif choice == 6
         let l:context = "dfm"
     endif
     silent execute "normal A @".l:context
@@ -42,23 +30,19 @@ command! -nargs=0 Context call Context()
 nnoremap <leader>2 :Context<cr>
 
 "
-" gtd complete task
-" ----------------------------
-function! CompleteTask()
-    silent execute ":.s/\ ]/x]"
-    silent execute ":noh"
-endfunction
-
-command! -nargs=0 CompleteTask call CompleteTask()
-nnoremap <leader>5 :CompleteTask<cr>
-
-"
-" current date
+"" current date
 " ----------------------------
 function! CurrentDate()
-  let l:datetime = strftime("%d-%b-%Y")
-
-    silent execute "normal A ".l:datetime
+    let l:datetime = strftime("%m-%d-%Y")
+    let l:dateoptions = "&asap \n&some"
+    let l:duedate = ""
+    let choice = confirm("Pick a Due Date:", l:dateoptions, 0, "Question")
+    if choice == 1
+        let l:duedate = "**due: asap** "
+    elseif choice == 2
+        let l:duedate = "**due: ".l:datetime."** "
+    endif
+    silent execute "normal 0la".l:duedate
 endfunction
 command! -nargs=0 CurrentDate call CurrentDate()
 nnoremap <leader>3 :CurrentDate<cr>
@@ -70,30 +54,30 @@ nnoremap <leader>3 :CurrentDate<cr>
 " Thank you Drew Neil!
 " The following functions were created by watching Episode #38 of Vimcasts 
 " (http://vimcasts.org/episodes/writing-a-custom-fold-expression/)
-function! FoldMarkdown()
-    let l:currentline = getline(v:lnum)
-    if match(l:currentline, '^##') >= 0
-        return ">2"
-    elseif match(l:currentline, '^#') >= 0
-        return ">1"
-    else
-        return "="
-    endif
-endfunction
+"function! FoldMarkdown()
+"    let l:currentline = getline(v:lnum)
+"    if match(l:currentline, '^##') >= 0
+"        return ">2"
+"    elseif match(l:currentline, '^#') >= 0
+"        return ">1"
+"    else
+"        return "="
+"    endif
+"endfunction
 
-function! GetMarkdownFoldText()
-    let foldsize = (v:foldend-v:foldstart)
-    return getline(v:foldstart)
-endfunction
+"function! GetMarkdownFoldText()
+"    let foldsize = (v:foldend-v:foldstart)
+"    return getline(v:foldstart)
+"endfunction
 
 "
 " folding 
 " ----------------------------
-setlocal foldtext=GetMarkdownFoldText()
-setlocal foldexpr=FoldMarkdown()
-setlocal foldmethod=expr
-setlocal foldcolumn=3
-setlocal foldlevel=1
+"setlocal foldtext=GetMarkdownFoldText()
+"setlocal foldexpr=FoldMarkdown()
+"setlocal foldmethod=expr
+"setlocal foldcolumn=3
+"setlocal foldlevel=1
 
 "
 " tabs 
