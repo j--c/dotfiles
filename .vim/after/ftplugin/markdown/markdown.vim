@@ -34,15 +34,7 @@ nnoremap <leader>2 :Context<cr>
 " ----------------------------
 function! CurrentDate()
     let l:datetime = strftime("%m-%d-%Y")
-    let l:dateoptions = "&asap \n&some"
-    let l:duedate = ""
-    let choice = confirm("Pick a Due Date:", l:dateoptions, 0, "Question")
-    if choice == 1
-        let l:duedate = "**due: asap** "
-    elseif choice == 2
-        let l:duedate = "**due: ".l:datetime."** "
-    endif
-    silent execute "normal 0la".l:duedate
+    silent execute "normal A **".l:datetime."**"
 endfunction
 command! -nargs=0 CurrentDate call CurrentDate()
 nnoremap <leader>3 :CurrentDate<cr>
