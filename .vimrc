@@ -155,9 +155,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'w0rp/ale'
 call plug#end()
 
+let g:onedark_terminal_italics=1
 "
 " colors
 " ----------------------------
 set background=dark
 set termguicolors
 colorscheme johndark
+
