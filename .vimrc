@@ -68,6 +68,7 @@ nnoremap <leader>g :b!
 " windows
 " ----------------------------
 nnoremap <leader>v :vsp<cr>
+nnoremap <leader>s :sp<cr>
 nnoremap <leader>w <c-w>w
 nnoremap <leader>c <c-w>c
 tnoremap <leader>w <c-w>w
@@ -137,7 +138,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 "
 " vim-airline
 " ----------------------------
-let g:airline_theme="kalisi"
+let g:airline_theme="papercolor"
 
 "
 " package manager
@@ -158,4 +159,5 @@ call plug#end()
 " colors
 " ----------------------------
 set background=dark
-colorscheme onedark
+set termguicolors
+colorscheme johndark

@@ -23,7 +23,7 @@ function! Context()
     elseif choice == 6
         let l:context = "dfm"
     endif
-    silent execute "normal A @".l:context
+    silent execute "normal A _@".l:context."_"
 endfunction
 
 command! -nargs=0 Context call Context()
@@ -38,6 +38,15 @@ function! CurrentDate()
 endfunction
 command! -nargs=0 CurrentDate call CurrentDate()
 nnoremap <leader>3 :CurrentDate<cr>
+
+function! FindCurrentDate()
+    let l:datetime = strftime("%m-%d-%Y")
+    execute "vimgrep ".l:datetime." %"
+endfunction
+command! -nargs=0 FindCurrentDate call FindCurrentDate()
+nnoremap <leader>4 :FindCurrentDate<cr>
+
+   
 
 "
 " custom fold expression
