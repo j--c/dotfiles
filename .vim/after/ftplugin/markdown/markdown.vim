@@ -23,7 +23,7 @@ function! Context()
     elseif choice == 6
         let l:context = "dfm"
     endif
-    silent execute "normal A _@".l:context."_"
+    silent execute "normal A *@".l:context."*"
 endfunction
 
 command! -nargs=0 Context call Context()
