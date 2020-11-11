@@ -4,6 +4,12 @@
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
 
 "
+" spelling
+" ----------------------------
+set spelllang=en
+set spell
+
+"
 " gtd context
 " ----------------------------
 function! Context()
@@ -46,7 +52,11 @@ endfunction
 command! -nargs=0 FindCurrentDate call FindCurrentDate()
 nnoremap <leader>4 :FindCurrentDate<cr>
 
-   
+function! ProjectCount()
+    execute "vimgrep '+' %"
+endfunction
+command! -nargs=0 ProjectCount call ProjectCount()
+nnoremap <leader>6 :ProjectCount<cr>
 
 "
 " custom fold expression

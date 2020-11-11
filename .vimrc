@@ -19,6 +19,7 @@ set mouse=a
 filetype indent on
 syntax enable
 
+
 "
 " ui config
 " ----------------------------
