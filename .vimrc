@@ -162,5 +162,4 @@ let g:onedark_terminal_italics=1
 " ----------------------------
 set background=dark
 set termguicolors
-colorscheme johndark
-
+colorscheme flattened_dark
