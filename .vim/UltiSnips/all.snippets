@@ -1,0 +1,33 @@
+snippet pkg
+package org.subsilentio.${1:sub-package};
+endsnippet
+
+snippet cls
+package org.subsilentio.${1:sub-package};
+
+
+public class ${1:class-name} {
+}
+endsnippet
+
+snippet unittest
+package org.subsilentio.${1:sub-package};
+
+
+// org.junit classes
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class ${2:class-name} {
+
+	@Test
+	public void testNothing() {
+		assertEquals(1,1);
+	}
+}
+endsnippet
