@@ -133,7 +133,7 @@ let g:netrw_altv = 1
 "
 " ultisnips
 " ----------------------------
-let g:UltiSnipsSnippetsDir="~/Documents/git-repos/dotfiles/.vim/plugged/vim-snippets/snippets"
+let g:UltiSnipsSnippetDirectories=['~/Documents/git-repos/dotfiles/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
 
 "
