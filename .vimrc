@@ -89,7 +89,7 @@ tnoremap <esc> <c-\><c-n>
 "
 " searching and finding
 " ----------------------------
-let g:ctrlp_map = '<leader>f'
+let g:ctrlp_map = '<leader><leader>'
 set incsearch
 set path=,,**
 
@@ -112,7 +112,7 @@ nnoremap <leader>9 :e ~/Documents/git-repos/dotfiles/.vimrc<cr>
 " underline
 " ----------------------------
 function! Underline()
-    normal! yypv$r-
+normal! yypv$r-
 endfunction
 command! Underline call Underline()
 nnoremap <leader>- :Underline<cr>
@@ -123,7 +123,7 @@ nnoremap <leader>- :Underline<cr>
 let g:jmcWildIgnore="*/tmp/*,*/target/*,*.so,*.swp,*.zip,*.pyc,__init__*.py,.git*"
 set wildignore+=g:jmcWildIgnore
 autocmd FileType netrw setl bufhidden=delete
-nnoremap <leader><leader> :20Lexplore<cr>
+nnoremap <leader>f :20Lexplore<cr>
 let g:netrw_browse_split=4
 let g:netrw_list_hide=g:jmcWildIgnore
 let g:netrw_liststyle=3

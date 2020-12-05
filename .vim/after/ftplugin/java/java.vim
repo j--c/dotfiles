@@ -23,3 +23,9 @@ set foldlevel=3
 " ----------------------------
 nnoremap <leader>3 :TagbarToggle<cr> 
 nnoremap <leader>t :!ctags -R src<cr>
+
+"
+" spelling
+" ----------------------------
+set spelllang=en
+set spell!
