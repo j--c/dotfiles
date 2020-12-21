@@ -71,6 +71,8 @@ nnoremap <leader>g :b!
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>s :sp<cr>
 nnoremap <leader>w <c-w>w
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
 nnoremap <leader>c <c-w>c
 tnoremap <leader>w <c-w>w
 tnoremap <leader>c <c-w>c
@@ -161,4 +163,4 @@ let g:onedark_terminal_italics=1
 " ----------------------------
 set background=dark
 set termguicolors
-colorscheme flattened_dark
+colorscheme afterglow
