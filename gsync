@@ -1,6 +1,0 @@
-#!/bin/bash
-
-git add --all
-git commit -m "automated sync"
-git pull --rebase
-git push origin master
