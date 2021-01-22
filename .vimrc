@@ -150,6 +150,7 @@ call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
+Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
