@@ -7,17 +7,8 @@ nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdow
 " spelling
 " ----------------------------
 set spelllang=en
-set spell
+set nospell
 
-"
-" tabs 
-" ----------------------------
-set softtabstop=3
-set shiftwidth=3
-set tabstop=3
-
-"
-" vim-markdown settings 
-" ----------------------------
-let g:vim_markdown_frontmatter = 1
-set conceallevel=2
+let g:markdown_fold_style = 'nested'
+let g:markdown_fold_override_foldtext=0
+noremap ge :execute 'e '.expand("<cfile>")

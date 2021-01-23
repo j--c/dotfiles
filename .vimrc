@@ -143,14 +143,15 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " ----------------------------
 let g:airline_theme="papercolor"
 
+
 "
 " package manager
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'masukomi/vim-markdown-folding'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
-Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
@@ -159,6 +160,7 @@ Plug 'w0rp/ale'
 call plug#end()
 
 let g:onedark_terminal_italics=1
+
 "
 " colors
 " ----------------------------
