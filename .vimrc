@@ -143,7 +143,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 " ----------------------------
 let g:airline_theme="papercolor"
 
-
 "
 " package manager
 " ----------------------------
@@ -152,6 +151,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'masukomi/vim-markdown-folding'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
@@ -160,6 +160,11 @@ Plug 'w0rp/ale'
 call plug#end()
 
 let g:onedark_terminal_italics=1
+
+" vim-mardown-folding
+" ----------------------------
+let g:markdown_fold_override_foldtext = 0
+let g:markdown_fold_style = 'nested'
 
 "
 " colors
