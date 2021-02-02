@@ -88,6 +88,14 @@ command! SplitTerm call SplitTerm()
 nnoremap <leader>1 :SplitTerm<cr>
 tnoremap <esc> <c-\><c-n>
 
+nmap <c-s-p> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
+
 "
 " searching and finding
 " ----------------------------
@@ -148,7 +156,6 @@ let g:airline_theme="papercolor"
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'masukomi/vim-markdown-folding'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-unimpaired'
@@ -160,11 +167,6 @@ Plug 'w0rp/ale'
 call plug#end()
 
 let g:onedark_terminal_italics=1
-
-" vim-mardown-folding
-" ----------------------------
-let g:markdown_fold_override_foldtext = 0
-let g:markdown_fold_style = 'nested'
 
 "
 " colors

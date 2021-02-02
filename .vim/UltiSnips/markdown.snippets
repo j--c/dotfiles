@@ -9,4 +9,21 @@ tags: [${1:tags}]
 $0
 endsnippet
 
+snippet due "due date" 
+== ${1:due} ==
+endsnippet
 
+
+snippet act "action" b
+* ${1:action} == ${2:due} ==
+endsnippet
+
+snippet tdy "today"
+`!p import datetime
+snip.rv = str(datetime.date.today())`
+endsnippet
+
+snippet tmw "tomorrow"
+`!p import datetime
+snip.rv = str(datetime.date.today() + datetime.timedelta(days=1))`
+endsnippet
