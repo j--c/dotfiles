@@ -27,7 +27,8 @@ setlocal foldlevel=2
 " ----------------------------
 
 nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdown/markdown.vim<cr>
-nnoremap <leader>g :Ggrep
+
+inoremap <F2> <c-x><c-f>
 
 
 

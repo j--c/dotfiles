@@ -60,18 +60,15 @@ nnoremap k gk
 "
 " buffers
 " ----------------------------
-nnoremap [d :bd!<cr>
-nnoremap ]d :bd!<cr>
+nnoremap <leader>b :bn!<cr>
+nnoremap <leader>d :bd!<cr>
 
 "
 " windows
 " ----------------------------
-nnoremap [v :vsp<cr>
-nnoremap ]v :vsp<cr>
-nnoremap [s :sp<cr>
-nnoremap ]s :sp<cr>
-nnoremap [w <c-w>w
-nnoremap ]w <c-w>w
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>s :sp<cr>
+nnoremap <leader>w <c-w>w
 nnoremap <leader>h <c-w>h
 nnoremap <leader>l <c-w>l
 nnoremap <leader>c <c-w>c
@@ -105,14 +102,14 @@ set incsearch
 set path=,,**
 
 "
+" GitGrep 
+" ----------------------------
+nnoremap <leader>g :Ggrep
+
+"
 " folding
 " ----------------------------
 nnoremap <space> za 
-
-"
-" new file
-" ----------------------------
-nnoremap <leader>n :e 
 
 "
 " init.vim

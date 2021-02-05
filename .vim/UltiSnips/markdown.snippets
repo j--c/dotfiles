@@ -18,6 +18,7 @@ snippet act "action" b
 * ${1:action} == ${2:due} ==
 endsnippet
 
+
 snippet tdy "today"
 `!p import datetime
 snip.rv = str(datetime.date.today())`
@@ -38,10 +39,9 @@ def complete(t, opts):
 	return "(" + '\n'.join(opts) + ')'
 endglobal
 
+
 snippet res "resource"
-[link](resource/$1`!p import os
-files = os.listdir("resource")
-snip.rv = complete(t[1], files)`)
+resource/
 endsnippet
 
 
