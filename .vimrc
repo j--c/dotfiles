@@ -154,6 +154,7 @@ let g:airline_theme="papercolor"
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-unimpaired'
@@ -171,4 +172,4 @@ let g:onedark_terminal_italics=1
 " ----------------------------
 set background=dark
 set termguicolors
-colorscheme afterglow
+colorscheme base16-summerfruit-dark
