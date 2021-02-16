@@ -9,13 +9,31 @@ tags: [${1:tags}]
 $0
 endsnippet
 
+
 snippet due "due date" 
 == ${1:due} ==
 endsnippet
 
 
 snippet act "action" b
-* ${1:action} == ${2:due} ==
+* @${1:context} : ${2:action} : _${3:due}
+endsnippet
+
+
+snippet out "outcome" b
+* ${1:outcome} : _${2:due}
+endsnippet
+
+
+snippet _tdy "today"
+`!p import datetime
+snip.rv = '_'+str(datetime.date.today())+'_'`
+endsnippet
+
+
+snippet _tmw "tomorrow"
+`!p import datetime
+snip.rv = '_'+str(datetime.date.today() + datetime.timedelta(days=1))+'_'`
 endsnippet
 
 
@@ -24,24 +42,8 @@ snippet tdy "today"
 snip.rv = str(datetime.date.today())`
 endsnippet
 
+
 snippet tmw "tomorrow"
 `!p import datetime
 snip.rv = str(datetime.date.today() + datetime.timedelta(days=1))`
 endsnippet
-
-
-global !p
-def complete(t, opts):
-	if t:
-		opts = [ m[len(t):] for m in opts if m.startswith(t) ]
-	if len(opts) == 1:
-		return opts[0]
-	return "(" + '\n'.join(opts) + ')'
-endglobal
-
-
-snippet res "resource"
-resource/
-endsnippet
-
-
