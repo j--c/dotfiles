@@ -79,7 +79,7 @@ tnoremap <leader>c <c-w>c
 " terminal
 " ----------------------------
 function! SplitTerm()
-    sp
+    vsp
     term
 endfunction
 command! SplitTerm call SplitTerm()
@@ -94,12 +94,6 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
 
-"
-" searching and finding
-" ----------------------------
-let g:ctrlp_map = '<leader><leader>'
-set incsearch
-set path=,,**
 
 "
 " GitGrep 
@@ -126,23 +120,40 @@ command! Underline call Underline()
 nnoremap <leader>- :Underline<cr>
 
 "
+" zettlekasten
+" ----------------------------
+function! Zettlekasten()
+    cd ~/Documents/git-repos/zettlekasten
+endfunction
+command! Zettlekasten call Zettlekasten()
+nnoremap <leader>z :Zettlekasten<cr>
+
+"
 " netrw - project drawer
 " ----------------------------
-let g:jmcWildIgnore="*/tmp/*,*/target/*,*.so,*.swp,*.zip,*.pyc,__init__*.py,.git*"
+let g:jmcWildIgnore='__init__.py'
 set wildignore+=g:jmcWildIgnore
-autocmd FileType netrw setl bufhidden=delete
-nnoremap <leader>. :20Lexplore<cr>
-let g:netrw_browse_split=4
-let g:netrw_list_hide=g:jmcWildIgnore
-let g:netrw_liststyle=3
-let g:netrw_banner=0
-let g:netrw_altv = 1
+let g:ctrlp_custom_ignore = '\v[\/](__pycache__|target|dist)|__init__.py$|(\.(swp|ico|git|svn))$'
+nnoremap <leader>. :NERDTreeToggle<cr>
+
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+nnoremap fd :YcmCompleter GoToDefinition<CR>
+
+"
+" searching and finding
+" ----------------------------
+let g:ctrlp_map = '<leader><leader>'
+let g:ctrlp_arg_map = 1
+set incsearch
+set path=,,**
 
 "
 " ultisnips
 " ----------------------------
 let g:UltiSnipsSnippetDirectories=['~/Documents/git-repos/dotfiles/.vim/UltiSnips']
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<leader>m"
 
 "
 " vim-airline
@@ -153,12 +164,14 @@ let g:airline_theme="papercolor"
 " package manager
 " ----------------------------
 call plug#begin('~/Documents/git-repos/dotfiles/.vim/plugged')
+Plug 'scrooloose/nerdtree'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'

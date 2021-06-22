@@ -1,3 +1,29 @@
+global !p
+
+
+import datetime
+
+
+def getWeekdayDate(wkdy):
+	t = datetime.date.today().weekday()
+	if t >= wkdy:
+		daysUntil = abs((wkdy + 7) - t) 
+	else:
+		daysUntil = abs(wkdy - t)
+	
+	td = datetime.date.today() + datetime.timedelta(days=daysUntil)
+	return dateTosString(td)
+
+
+def dateTosString(td):
+	m = str(td.month)
+	d = str(td.day)
+	return str(m + '.' + d)
+
+
+endglobal
+
+
 snippet head "Header" b
 ---
 file: `!v expand('%:t')`
@@ -10,40 +36,100 @@ $0
 endsnippet
 
 
+snippet prj "projects" b
+- [ ] ${1:description}
+endsnippet
+
+
+snippet ccc "@ccc actions" b
+- [ ] @ccc | ${1:description}
+endsnippet
+
+
+snippet cac "@claire actions" b
+- [ ] @cac | ${1:description}
+endsnippet
+
+
+snippet hme "@home actions" b
+- [ ] @hme | ${1:description}
+endsnippet
+
+
+snippet cpt "@computer actions" b
+- [ ] @cpt | ${1:description}
+endsnippet
+
+
+snippet com "@comms actions" b
+- [ ] @com | ${1:description}
+endsnippet
+
+
+snippet dfm "@dfm actions" b
+- [ ] @dfm | ${1:description}
+endsnippet
+
+
+snippet w8t "@wait actions" b
+- [ ] @w8t | ${1:description}
+endsnippet
+
+
+snippet err "@err actions" b
+- [ ] @err | ${1:description}
+endsnippet
+
+
 snippet due "due date" 
-== ${1:due} ==
-endsnippet
-
-
-snippet act "action" b
-* @${1:context} : ${2:action} : _${3:due}
-endsnippet
-
-
-snippet out "outcome" b
-* ${1:outcome} : _${2:due}
-endsnippet
-
-
-snippet _tdy "today"
-`!p import datetime
-snip.rv = '_'+str(datetime.date.today())+'_'`
-endsnippet
-
-
-snippet _tmw "tomorrow"
-`!p import datetime
-snip.rv = '_'+str(datetime.date.today() + datetime.timedelta(days=1))+'_'`
+| ${1:due}
 endsnippet
 
 
 snippet tdy "today"
 `!p import datetime
-snip.rv = str(datetime.date.today())`
+td = datetime.date.today()
+snip.rv = dateTosString(td)`
 endsnippet
 
 
 snippet tmw "tomorrow"
 `!p import datetime
-snip.rv = str(datetime.date.today() + datetime.timedelta(days=1))`
+td = datetime.date.today() + datetime.timedelta(days=1)
+snip.rv = dateTosString(td)`
+endsnippet
+
+
+snippet mon "monday"
+`!p snip.rv = getWeekdayDate(0)`
+endsnippet
+
+
+snippet tue "tuesday"
+`!p snip.rv = getWeekdayDate(1)`
+endsnippet
+
+
+snippet wed "wednesday"
+`!p snip.rv = getWeekdayDate(2)`
+endsnippet
+
+
+snippet thu "thursday"
+`!p snip.rv = getWeekdayDate(3)`
+endsnippet
+
+
+snippet fri "friday"
+`!p snip.rv = getWeekdayDate(4)`
+endsnippet
+
+
+snippet sat "saturday"
+`!p snip.rv = getWeekdayDate(5)`
+endsnippet
+
+
+snippet sun "sunday"
+`!p snip.rv = getWeekdayDate(6)`
 endsnippet

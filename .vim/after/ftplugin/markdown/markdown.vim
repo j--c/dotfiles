@@ -1,14 +1,4 @@
 "
-" count outcomes or actions in my 'GTD' setup
-" ----------------------------
-function! CountItems()
-    %s/^*//n
-endfunction
-command! -nargs=* CountItems call CountItems()
-nnoremap <leader><cr> :CountItems<cr>
-
-
-"
 " basic implementation of Drew Neil function implemented on Vimcasts
 " thanks to Drew Neil!
 " ----------------------------
@@ -32,9 +22,13 @@ function! FoldLine()
 endfunction
 setlocal foldmethod=expr
 setlocal foldexpr=FoldLine()
-setlocal foldlevel=2
+setlocal foldlevel=1
 
 
+function! CountTasks()
+    %s/[ ]//n
+endfunction
+command! Count call CountTasks()
 "
 " markdown specific setting files
 " ----------------------------
@@ -47,7 +41,7 @@ nnoremap <leader>8 :e ~/Documents/git-repos/dotfiles/.vim/after/ftplugin/markdow
 inoremap <c-x> <c-x><c-f>
 
 
-"
+
 " spelling
 " ----------------------------
 set spelllang=en
